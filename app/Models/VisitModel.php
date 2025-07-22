@@ -51,7 +51,11 @@ class VisitModel extends Model
             ->where('user_id', $userId)
             ->where('visit_date', $today)
             ->first();
-        $result['duration'] = $this->formatDuration($result['duration']);
+        if ($result !== null) {
+            $result['duration'] = $this->formatDuration($result['duration']);
+        } else {
+            return null;
+        }
         return $result;
     }
 

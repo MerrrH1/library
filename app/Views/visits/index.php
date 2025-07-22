@@ -353,7 +353,7 @@
          <div class="action-buttons">
              <form action="<?= base_url('visits/checkin') ?>" method="post" class="form-group-time">
                  <label for="time_in_picker">Waktu Check-in:</label>
-                 <input type="text" id="time_in_picker" name="time_in" value="<?= old('time_in', date('H:i')) ?>" placeholder="HH:MM" required>
+                 <input type="text" id="time_in_picker" name="time_in" value="<?= old('time_in', date('H:i:s')) ?>" placeholder="HH:MM" required>
                  <button type="submit" class="check-in" <?= $todayVisit && $todayVisit['time_in'] ? 'disabled' : '' ?>>
                      <i class="fas fa-sign-in-alt"></i> Check-in
                  </button>
@@ -361,7 +361,7 @@
 
              <form action="<?= base_url('visits/checkout') ?>" method="post" class="form-group-time">
                  <label for="time_out_picker">Waktu Check-out:</label>
-                 <input type="text" id="time_out_picker" name="time_out" value="<?= old('time_out', date('H:i')) ?>" placeholder="HH:MM" required>
+                 <input type="text" id="time_out_picker" name="time_out" value="<?= old('time_out', date('H:i:s')) ?>" placeholder="HH:MM" required>
                  <button type="submit" class="check-out" <?= !$todayVisit || $todayVisit['time_out'] ? 'disabled' : '' ?>>
                      <i class="fas fa-sign-out-alt"></i> Check-out
                  </button>
